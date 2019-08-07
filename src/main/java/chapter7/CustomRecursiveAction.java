@@ -7,7 +7,7 @@ import java.util.concurrent.RecursiveAction;
 
 public class CustomRecursiveAction extends RecursiveAction {
 
-    private String workload = "";//represents load
+    private String workload = ""; //represents load
     private static final int THRESHOLD = 4;
 
     public CustomRecursiveAction(String workload) {
@@ -41,7 +41,11 @@ public class CustomRecursiveAction extends RecursiveAction {
 
     public static void main(String[] args) {
         CustomRecursiveAction customRecursiveAction = new CustomRecursiveAction("hellouw to all");
+        CustomRecursiveAction customRecursiveAction1 = new CustomRecursiveAction("hellouw to all1");
+        CustomRecursiveAction customRecursiveAction2 = new CustomRecursiveAction("hellouw to all2");
         customRecursiveAction.fork();
-
+        customRecursiveAction1.fork();
+        customRecursiveAction2.fork();
+        customRecursiveAction.join();
     }
 }
